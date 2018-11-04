@@ -1,5 +1,3 @@
-// video source https://www.videezy.com/random-objects/2313-electric-bulb-hd-stock-video
-
 var container = document.getElementById('video-stretch');
 var video = document.getElementById('video-background');
 
