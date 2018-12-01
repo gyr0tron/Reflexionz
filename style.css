@@ -1,8 +1,50 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+} */
+
+/* reset css */
+html, body, div, span, applet, object, iframe,
+article, aside, canvas, details, embed, 
+figure, figcaption, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.row{
+	margin: 0px !important;
+}
+
 
 @font-face {
     font-family: lemontuesday;
@@ -26,7 +68,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .video-stretch .overlay {
   background: repeating-linear-gradient(0deg, rgba(0, 0, 255, 0.3), transparent);
@@ -165,4 +207,158 @@ body {
     width: 100%;
 		font-size: 1.5em;
 	}
+}
+
+.img-resp{
+	max-width: 100%; 
+	height: auto;
+}
+
+.text-center{
+	margin: 0 auto;
+	z-index: 1;
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pad-top{
+	padding-top: 3%;
+}
+
+.bg-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(./imgs/back.png) center center no-repeat;
+	background-size: cover;
+	z-index: 0;
+}
+
+.bg-img:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom , #002f4b, #dc4225);
+	opacity: .6;
+	z-index: -1;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.button-container .button-default {
+  background-color: #f00;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  margin: 10px;
+  display: inline-block;
+}
+.button-container .button-default:hover {
+  background-color: #990000;
+  cursor: pointer;
+}
+.button-container .button-slanted {
+  transform: skewX(-20deg);
+}
+.button-container .button-slanted-content {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff;
+  transform: skewX(20deg);
+  display: inline-block;
+  padding: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+#scroll-animate
+{
+  overflow: hidden;
+}
+
+#scroll-animate-main
+{
+  width: 100%;
+  left: 0;
+  position: fixed;
+}
+
+#heightPage,
+#heightScroll
+{
+  width: 10px;
+  top: 0;
+  position: absolute;
+  z-index: 99;
+}
+
+#heightPage
+{
+  left: 0;
+}
+
+#heightScroll
+{
+  right: 0;
+}
+
+header
+{
+  width: 100%;
+	height: 100%;
+	top: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+footer
+{
+  width: 100%;
+  height: 300px;
+  background: gray;
+  bottom: -300px;
+  position: fixed;
+  z-index: -1;
+}
+
+.content
+{
+  height: 1000px;
+  min-height: 1000px;
+  background: #ededed;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper-parallax {
+  margin-top: 100%;
+  margin-bottom: 300px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+header,
+footer,
+#scroll-animate-main
+{
+  -webkit-transition-property: all;
+     -moz-transition-property: all;
+      transition-property: all;
+
+  -webkit-transition-duration: 0.4s;
+     -moz-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0, 1);
+     -moz-transition-timing-function: cubic-bezier(0, 0, 0, 1);
+      transition-timing-function: cubic-bezier(0, 0, 0, 1);
 }

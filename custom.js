@@ -20,7 +20,8 @@ function adapt() {
 }
 
 // events
-window.addEventListener('load', adapt);
+document.addEventListener('load', adapt);
+// window.addEventListener('load', adapt);
 window.addEventListener('resize', adapt);
 
 (function () {
@@ -215,3 +216,65 @@ window.addEventListener('resize', adapt);
   }
 
 })();
+
+function scrollFooter(scrollY, heightFooter) {
+
+  if (scrollY >= heightFooter) {
+    $('footer').css({
+      'bottom': '-17px'
+    });
+  }
+  else {
+    $('footer').css({
+      'bottom': '-' + heightFooter + 'px'
+    });
+  }
+}
+
+$(window).on('load', function () {
+  var windowHeight = $(window).height(),
+    footerHeight = $('footer').height(),
+    heightDocument = (windowHeight) + ($('.content').height()) + ($('footer').height()) - 20;
+
+  $('#scroll-animate, #scroll-animate-main').css({
+    'height': heightDocument + 'px'
+  });
+
+  $('header').css({
+    'height': windowHeight + 'px',
+    'line-height': windowHeight + 'px'
+  });
+
+  $('.wrapper-parallax').css({
+    'margin-top': windowHeight + 'px'
+  });
+
+  scrollFooter(window.scrollY, footerHeight);
+
+
+  var timer;
+
+  window.onscroll = function () {
+    if (timer) {
+      window.clearTimeout(timer);
+    }
+
+    timer = window.setTimeout(function () {
+      // actual callback
+
+      var scroll = window.scrollY;
+
+      $('#scroll-animate-main').css({
+        'top': '-' + scroll + 'px'
+      });
+
+      $('header').css({
+        'background-position-y': 50 - (scroll * 100 / heightDocument) + '%'
+      });
+
+      scrollFooter(scroll, footerHeight);
+      // console.log("Firing!");
+    }, 0.01);
+    
+  }
+});
