@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
   <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js"></script>
   <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js"></script>
   <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js"></script>
@@ -44,10 +46,19 @@
     <div class="bg-img">
       <h1 class="pad-top text-center" style="color:white;"><strong>National Short Movie Competition</strong></h1>
       <h1 class="text-center" style="color:white;">In association with</h1>
-      <img class="img-center" src="./imgs/ifp.png" width="300" height="200" style="padding-top:1%; padding-bottom:1%;" alt="India Film Project">
+      <img class="img-center" src="./imgs/ifp.png" width="300" height="200" style="padding-top:1%; padding-bottom:1%;" alt="India Film Project"><br>
       <div class="button-container">
         <div class="button-default button-slanted">
-          <a href="https://goo.gl/forms/b0DC0pIDAY3W21Cz2"><div class="button-slanted-content">Register Here!</div></a>
+          <a data-toggle="modal" data-target="#ruleshortmovie">
+            <div class="button-slanted-content">
+              Rules
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="button-container">
+        <div class="button-default button-slanted">
+          <a href="https://goo.gl/forms/b0DC0pIDAY3W21Cz2"><div class="button-slanted-content">Register!</div></a>
         </div>
       </div>
       <br style="font-size: 13vh;">
@@ -57,7 +68,16 @@
       <img class="img-center" src="./imgs/logo.png" width="300" height="400" style="padding-top:1%; padding-bottom:1%;" alt="India Film Project Campus Connect"><br>
       <div class="button-container">
         <div class="button-default button-slanted">
-          <a href="https://goo.gl/forms/j6fPolkNINCEAcTm1"><div class="button-slanted-content">Register Here!</div></a>
+          <a data-toggle="modal" data-target="#rule24hr">
+            <div class="button-slanted-content">
+              Rules
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="button-container">
+        <div class="button-default button-slanted">
+          <a href="https://goo.gl/forms/j6fPolkNINCEAcTm1"><div class="button-slanted-content">Register!</div></a>
         </div>
       </div>
       <br style="font-size: 13vh;">
@@ -73,6 +93,77 @@
     <img src="./imgs/digest.png" width="200" height="200" class="img-center" alt="WittyFeed" srcset="">
   </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="ruleshortmovie" tabindex="-1" role="dialog" aria-labelledby="ruleshortmovie"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 class="modal-title" id="exampleModalLongTitle" style="float: left;">Lights Camera Action (Short Movie)</h3>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <li style="margin-bottom:5px;">Film should have a time limit of 5-10 minutes.</li>
+          <li style="margin-bottom:5px;">Upload your movie on YouTube & submit your video link. If you don’t
+          want your movie to be public, then make it unlisted.</li>
+          <li style="margin-bottom:5px;">Any obscene and vulgar content is not allowed.</li>
+          <li style="margin-bottom:5px;">Language is not a barrier. If the language is other than Hindi or
+          English, then subtitles should be used.</li>
+          <li style="margin-bottom:5px;">A small introduction regarding the theme of the film is expected by
+          the group.</li>
+          <li style="margin-bottom:5px;">Films should not have any objectionable content or hurt
+          any public sentiments.</li>
+          <li style="margin-bottom:5px;">At least 2 participants of the group should be present at the time of
+          the screening (provided they are in Mumbai).</li>
+          <li style="margin-bottom:5px;">A group can submit any number of movies but they will have to
+          register again.</li>
+        </ol>
+        <h3>Entry fee: ₹300 (Per Group)</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="rule24hr" tabindex="-1" role="dialog" aria-labelledby="rules24hour" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 class="modal-title" id="exampleModalLongTitle" style="float: left;">24-hour filmmaking challenge</h3>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <li style="margin-bottom:5px;">The theme will be revealed via WhatsApp/SMS at the beginning of
+          24 hours.</li>
+          <li style="margin-bottom:5px;">Tasks: Each team has to perform following tasks in the given
+          period of 24 hours Scripting, Casting, Location and Art Design.</li>
+          <li style="margin-bottom:5px;">Teams can shoot on DSLR or Mobile on 720p or higher. However,
+          the editing must be done on a laptop.</li>
+          <li style="margin-bottom:5px;">Team Leaders will receive the link for uploading the films at the
+          start of the competition.</li>
+          <li style="margin-bottom:5px;">Maximum length of film should be 120 seconds including beginning
+          and end credits.</li>
+          <li style="margin-bottom:5px;">You can have maximum 10 members in your team, excluding the
+          cast.</li>
+          <li style="margin-bottom:5px;">Any film received after the 24 hour deadline will be
+          disqualified.</li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="custom.js"></script>
 </body>
